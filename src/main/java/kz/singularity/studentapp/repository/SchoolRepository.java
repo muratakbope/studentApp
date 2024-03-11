@@ -1,4 +1,4 @@
-package kz.singularity.studentapp.Repository;
+package kz.singularity.studentapp.repository;
 
 import kz.singularity.studentapp.entity.School;
 import org.springframework.data.jpa.repository.JpaRepository;
