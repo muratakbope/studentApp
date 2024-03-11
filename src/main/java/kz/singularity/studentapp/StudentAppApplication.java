@@ -5,8 +5,8 @@ import kz.singularity.studentapp.entity.Student;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import kz.singularity.studentapp.Repository.StudentRepository;
-import kz.singularity.studentapp.Repository.SchoolRepository;
+import kz.singularity.studentapp.repository.StudentRepository;
+import kz.singularity.studentapp.repository.SchoolRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ public class StudentAppApplication implements CommandLineRunner {
     private final StudentRepository studentRepository;
     private final SchoolRepository schoolRepository;
 
-    public StudentAppApplication(kz.singularity.studentapp.Repository.StudentRepository studentRepository, SchoolRepository schoolRepository) {
+    public StudentAppApplication(StudentRepository studentRepository, SchoolRepository schoolRepository) {
         this.studentRepository = studentRepository;
         this.schoolRepository = schoolRepository;
     }
@@ -46,9 +46,7 @@ public class StudentAppApplication implements CommandLineRunner {
         schoolRepository.save(school1);
         schoolRepository.save(school2);
         System.out.println("the third method: " + schoolRepository.findSchoolBySchoolName("NISH"));
-        System.out.println("the fourth method: " + schoolRepository.getAmountOfStudents(2));
-
-
+        System.out.println("the fourth method: " + schoolRepository.getAmountOfStudents(2L));
 
     }
 }

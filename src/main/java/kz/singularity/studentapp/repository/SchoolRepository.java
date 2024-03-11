@@ -10,5 +10,5 @@ public interface SchoolRepository extends JpaRepository<School, Long> {
     School findSchoolBySchoolName(String schoolName);
 
     @Query("select s.studentNumber from School s where s.id = :id")
-    int getAmountOfStudents(int id);
+    int getAmountOfStudents(long id);
 }
